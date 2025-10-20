@@ -1,0 +1,28 @@
+<h2 mat-dialog-title style="font-weight:700;">{{ form.value.id ? 'Edit Employee' : 'Add Employee' }}</h2>
+
+<mat-dialog-content [formGroup]="form" class="dialog-body">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Position</mat-label>
+    <input matInput formControlName="position">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Department</mat-label>
+    <input matInput formControlName="department">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Salary</mat-label>
+    <input matInput type="number" formControlName="salary">
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button class="btn-primary" (click)="save()" [disabled]="form.invalid">Save</button>
+</mat-dialog-actions>

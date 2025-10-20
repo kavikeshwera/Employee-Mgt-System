@@ -1,0 +1,11 @@
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;        /* space between text boxes */
+  padding: 16px 8px; /* inner padding inside dialog */
+  min-width: 360px;
+}
+
+mat-form-field {
+  width: 100%;
+}

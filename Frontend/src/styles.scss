@@ -1,0 +1,115 @@
+/* ==== Global look & feel ==== */
+:root{
+  --bg: #0f172a;                 /* slate-900 */
+  --card: #111827;               /* gray-900 */
+  --muted: #94a3b8;              /* slate-400 */
+  --text: #e5e7eb;               /* gray-200 */
+  --primary: #6366f1;            /* indigo-500 */
+  --primary-600: #5458ee;
+  --accent: #22c55e;             /* green-500 */
+  --table-head: #0b1023;         /* darker card for header */
+  --table-row: #0e142b;
+  --table-row-hover: #141b39;
+  --border: rgba(148,163,184,0.15);
+  --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -20%, #1e293b 0%, transparent 40%),
+              radial-gradient(1200px 600px at 120% 20%, #1f2937 0%, transparent 35%),
+              var(--bg);
+}
+
+/* Angular Material base tweaks */
+.mat-mdc-unelevated-button, .mat-mdc-raised-button, .mat-mdc-outlined-button, .mat-mdc-button {
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Cards */
+.m-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)) , var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Table */
+.m-table {
+  width: 100%;
+}
+
+.m-table .mat-mdc-table {
+  background: transparent;
+}
+
+.m-table .mat-mdc-header-row {
+  background: var(--table-head);
+}
+
+.m-table .mat-mdc-header-cell {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: .3px;
+  border-bottom: 1px solid var(--border);
+}
+
+.m-table .mat-mdc-row {
+  background: var(--table-row);
+  transition: background .15s ease, transform .15s ease;
+  border-bottom: 1px solid var(--border);
+}
+
+.m-table .mat-mdc-row:hover {
+  background: var(--table-row-hover);
+}
+
+.m-table .mat-mdc-cell {
+  color: var(--text);
+}
+
+/* Toolbar (page title) */
+.m-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 20px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700; /* bold */
+  color: var(--text);
+}
+
+/* Search field */
+.m-search .mdc-notched-outline__leading,
+.m-search .mdc-notched-outline__trailing,
+.m-search .mdc-notched-outline__notch {
+  border-color: var(--border) !important;
+}
+.m-search .mat-mdc-input-element { color: var(--text); }
+
+/* Primary button */
+.btn-primary {
+  --mdc-filled-button-container-color: var(--primary);
+}
+.btn-primary:hover {
+  --mdc-filled-button-container-color: var(--primary-600);
+}
+
+/* Danger button */
+.btn-danger {
+  --mdc-button-label-text-color: #fca5a5;
+}
+
+.mat-mdc-dialog-surface {
+  padding: 20px !important;
+  border-radius: 16px !important;
+}
